@@ -67,7 +67,7 @@ createNextDescribe(
         expect(c).toBeDefined()
       })
 
-      it('should genenerate rand when draft mode enabled', async () => {
+      it('should generate rand when draft mode enabled', async () => {
         const opts = { headers: { Cookie } }
         const $ = await next.render$(basePath, {}, opts)
         expect($('#mode').text()).toBe('ENABLED')
