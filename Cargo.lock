@@ -4037,6 +4037,7 @@ dependencies = [
  "serde_json",
  "shadow-rs",
  "swc_core",
+ "tokio",
  "tracing",
  "turbo-tasks",
  "turbo-tasks-build",
