@@ -331,16 +331,29 @@ describe('react-dom/server in React Server environment', () => {
       source: await getRedboxSource(browser),
     }
     if (isTurbopack) {
-      expect(redbox).toMatchInlineSnapshot(`
-        {
-          "description": "Error: react-dom/server is not supported in React Server Components.",
-          "source": "app/exports/app-code/react-dom-server-node-explicit/page.js (0:0) @ <unknown>
-
-          1 | import * as ReactDOMServerNode from 'react-dom/server.node'
-          2 | // Fine to drop once React is on ESM
-          3 | import ReactDOMServerNodeDefault from 'react-dom/server.node'",
-        }
-      `)
+      if (isReact18) {
+        expect(redbox).toMatchInlineSnapshot(`
+          {
+            "description": "TypeError: Cannot read properties of undefined (reading 'ReactCurrentDispatcher')",
+            "source": "app/exports/app-code/react-dom-server-node-explicit/page.js (0:0) @ <unknown>
+  
+            1 | import * as ReactDOMServerNode from 'react-dom/server.node'
+            2 | // Fine to drop once React is on ESM
+            3 | import ReactDOMServerNodeDefault from 'react-dom/server.node'",
+          }
+        `)
+      } else {
+        expect(redbox).toMatchInlineSnapshot(`
+          {
+            "description": "Error: react-dom/server is not supported in React Server Components.",
+            "source": "app/exports/app-code/react-dom-server-node-explicit/page.js (0:0) @ <unknown>
+  
+            1 | import * as ReactDOMServerNode from 'react-dom/server.node'
+            2 | // Fine to drop once React is on ESM
+            3 | import ReactDOMServerNodeDefault from 'react-dom/server.node'",
+          }
+        `)
+      }
     } else {
       if (isReact18) {
         expect(redbox).toMatchInlineSnapshot(`
@@ -427,16 +440,29 @@ describe('react-dom/server in React Server environment', () => {
       source: await getRedboxSource(browser),
     }
     if (isTurbopack) {
-      expect(redbox).toMatchInlineSnapshot(`
-        {
-          "description": "Error: react-dom/server is not supported in React Server Components.",
-          "source": "internal-pkg/server.node.js (0:0) @ <unknown>
+      if (isReact18) {
+        expect(redbox).toMatchInlineSnapshot(`
+          {
+            "description": "TypeError: Cannot read properties of undefined (reading 'ReactCurrentDispatcher')",
+            "source": "app/exports/app-code/react-dom-server-node-explicit/page.js (0:0) @ <unknown>
+  
+            1 | import * as ReactDOMServerNode from 'react-dom/server.node'
+            2 | // Fine to drop once React is on ESM
+            3 | import ReactDOMServerNodeDefault from 'react-dom/server.node'",
+          }
+        `)
+      } else {
+        expect(redbox).toMatchInlineSnapshot(`
+          {
+            "description": "Error: react-dom/server is not supported in React Server Components.",
+            "source": "internal-pkg/server.node.js (0:0) @ <unknown>
 
-          1 | import * as ReactDOMServerEdge from 'react-dom/server.node'
-          2 | // Fine to drop once React is on ESM
-          3 | import ReactDOMServerEdgeDefault from 'react-dom/server.node'",
-        }
-      `)
+            1 | import * as ReactDOMServerEdge from 'react-dom/server.node'
+            2 | // Fine to drop once React is on ESM
+            3 | import ReactDOMServerEdgeDefault from 'react-dom/server.node'",
+          }
+        `)
+      }
     } else {
       if (isReact18) {
         expect(redbox).toMatchInlineSnapshot(`
@@ -720,16 +746,29 @@ describe('react-dom/server in React Server environment', () => {
       source: await getRedboxSource(browser),
     }
     if (isTurbopack) {
-      expect(redbox).toMatchInlineSnapshot(`
-        {
-          "description": "Error: react-dom/server is not supported in React Server Components.",
-          "source": "internal-pkg/server.node.js (0:0) @ <unknown>
+      if (isReact18) {
+        expect(redbox).toMatchInlineSnapshot(`
+          {
+            "description": "TypeError: Cannot read properties of undefined (reading 'ReactCurrentDispatcher')",
+            "source": "app/exports/app-code/react-dom-server-node-explicit/page.js (0:0) @ <unknown>
+  
+            1 | import * as ReactDOMServerNode from 'react-dom/server.node'
+            2 | // Fine to drop once React is on ESM
+            3 | import ReactDOMServerNodeDefault from 'react-dom/server.node'",
+          }
+        `)
+      } else {
+        expect(redbox).toMatchInlineSnapshot(`
+          {
+            "description": "Error: react-dom/server is not supported in React Server Components.",
+            "source": "internal-pkg/server.node.js (0:0) @ <unknown>
 
-          1 | import * as ReactDOMServerEdge from 'react-dom/server.node'
-          2 | // Fine to drop once React is on ESM
-          3 | import ReactDOMServerEdgeDefault from 'react-dom/server.node'",
-        }
-      `)
+            1 | import * as ReactDOMServerEdge from 'react-dom/server.node'
+            2 | // Fine to drop once React is on ESM
+            3 | import ReactDOMServerEdgeDefault from 'react-dom/server.node'",
+          }
+        `)
+      }
     } else {
       if (isReact18) {
         expect(redbox).toMatchInlineSnapshot(`
@@ -761,16 +800,29 @@ describe('react-dom/server in React Server environment', () => {
     }
 
     if (isTurbopack) {
-      expect(redbox).toMatchInlineSnapshot(`
-        {
-          "description": "Error: react-dom/server is not supported in React Server Components.",
-          "source": "internal-pkg/server.node.js (0:0) @ <unknown>
+      if (isReact18) {
+        expect(redbox).toMatchInlineSnapshot(`
+          {
+            "description": "TypeError: Cannot read properties of undefined (reading 'ReactCurrentDispatcher')",
+            "source": "app/exports/app-code/react-dom-server-node-explicit/page.js (0:0) @ <unknown>
+  
+            1 | import * as ReactDOMServerNode from 'react-dom/server.node'
+            2 | // Fine to drop once React is on ESM
+            3 | import ReactDOMServerNodeDefault from 'react-dom/server.node'",
+          }
+        `)
+      } else {
+        expect(redbox).toMatchInlineSnapshot(`
+          {
+            "description": "Error: react-dom/server is not supported in React Server Components.",
+            "source": "internal-pkg/server.node.js (0:0) @ <unknown>
 
-          1 | import * as ReactDOMServerEdge from 'react-dom/server.node'
-          2 | // Fine to drop once React is on ESM
-          3 | import ReactDOMServerEdgeDefault from 'react-dom/server.node'",
-        }
-      `)
+            1 | import * as ReactDOMServerEdge from 'react-dom/server.node'
+            2 | // Fine to drop once React is on ESM
+            3 | import ReactDOMServerEdgeDefault from 'react-dom/server.node'",
+          }
+        `)
+      }
     } else {
       if (isReact18) {
         expect(redbox).toMatchInlineSnapshot(`
